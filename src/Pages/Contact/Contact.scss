@@ -1,0 +1,20 @@
+.contact{
+    background-color: white;
+    color: #52675b;
+    margin-bottom: 5%;
+    font-weight: 900;
+    font-size: 160%;  
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.contact-back{ 
+    background: url('./Assets/feedback.jpg') no-repeat 0, 0;
+    height: 400px;
+    background-size: cover;
+    margin-bottom: 3%;
+}
+.top{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}

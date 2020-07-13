@@ -1,0 +1,47 @@
+.footer{
+    background-color: #52675c;
+    min-height: 150px;
+    color: white;
+}
+%defaultStyle{
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+}
+.links{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.list_title {
+    @extend %defaultStyle;
+    color: white;
+    text-align: center;
+    letter-spacing: 0.2px;
+    font-size: 12px;
+    height: 16px;
+}
+
+.list_subTitle {
+    @extend %defaultStyle;
+    opacity: 0.5;
+    font-size: 12px;
+    line-height: 2;
+    height: 33%;
+    letter-spacing: 0.2px;
+    color: white;
+}
+
+.socialMedia{
+    display: flex;
+    justify-content: space-evenly;
+    .follow_us {
+        height: 16px;
+        opacity: 0.5;
+        font-size: 12px;
+        line-height: 1.33;
+        color: white;
+        flex-grow: 1;
+    }
+}
