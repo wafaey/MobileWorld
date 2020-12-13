@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import HomeImageContainer from './Home_Components/HomeImageContainer'
 import Features from './Home_Components/Features'
 import BestSellers from './Home_Components/BestSellers'

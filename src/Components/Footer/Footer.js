@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Facebook from '@material-ui/icons/Facebook';
 import Twitter from '@material-ui/icons/Twitter';
 import Instagram from '@material-ui/icons/Instagram';

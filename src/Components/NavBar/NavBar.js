@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './NavBar.scss';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -9,14 +9,16 @@ import MenuIcon from '@material-ui/icons/Menu';
 import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
 import Drawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
-import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
+import HomeIcon from '@material-ui/icons/Home';
+import InfoIcon from '@material-ui/icons/Info';
+import ContactSupportIcon from '@material-ui/icons/ContactSupport';
+import CompareIcon from '@material-ui/icons/Compare';
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import PhoneAndroidIcon from '@material-ui/icons/PhoneAndroid';
 import { useHistory } from 'react-router-dom';
-import clsx from 'clsx';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -49,15 +51,19 @@ export default function NavBar() {
       setOpened(open)
     };
     const onRedirect = (name)=> {
-     if(name=='Home'){
+     if(name==='Home'){
        push('/');
-     }else if(name=='About'){
+     }else if(name==='About'){
        push('/about')
-     }else if(name=='Contact'){
-      push('/contact')
-      }else if(name=='Cart'){
+     }else if(name==='Compare'){
+        push('/compare')
+      }else if(name==='Product'){
+        push('/product')
+      }else if(name==='Cart'){
         push('/cart')
-      }
+      }else if(name==='Contact'){
+        push('/contact')
+        }
     };
 
     return (
@@ -81,9 +87,14 @@ export default function NavBar() {
         onKeyDown={toggleDrawer(false)}
       >
         <List >
-          {['Home', 'About', 'Product', 'Contact', 'Cart'].map((text, index) => (
+          {['Home', 'About','Compare', 'Cart', 'Contact'].map((text, index) => (
             <ListItem button key={text} onClick={()=>onRedirect(text)}>
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+              <ListItemIcon>
+                {text === 'Home' ? <HomeIcon /> :
+                 text=== 'About'? <InfoIcon/>:
+                 text=== 'Product'? <PhoneAndroidIcon/>:
+                 text=== 'Compare'? <CompareIcon/>:
+                 text=== 'Cart'? <ShoppingCartIcon/>:<ContactSupportIcon />}</ListItemIcon>
               <ListItemText primary={text} />
             </ListItem>
           ))}

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import MonetizationOnIcon from '@material-ui/icons/MonetizationOn';
 import LocalShippingIcon from '@material-ui/icons/LocalShipping';
 import RestoreIcon from '@material-ui/icons/Restore';

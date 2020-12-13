@@ -9,6 +9,9 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import {useDispatch, useSelector} from 'react-redux';
+import { useHistory } from 'react-router-dom';
+import index from '../../Actions/index'
 
 const TAX_RATE = 0.07;
 
@@ -47,6 +50,7 @@ const invoiceTotal = invoiceTaxes + invoiceSubtotal;
 
 export default function Cart() {
     const classes = useStyles();
+    const cartList = useSelector( state => ({ cartList:state.cartList}) ); 
 	return (
 
         <div className='cart'>
@@ -71,7 +75,7 @@ export default function Cart() {
             <TableCell align="right">Sum</TableCell>
           </TableRow>
         </TableHead>
-        <TableBody>
+        { <TableBody>
           {rows.map((row) => (
             <TableRow key={row.name}>
               <TableCell>{row.name}</TableCell>
@@ -95,7 +99,7 @@ export default function Cart() {
             <TableCell colSpan={2}>Total</TableCell>
             <TableCell align="right">{ccyFormat(invoiceTotal)}</TableCell>
           </TableRow>
-        </TableBody>
+        </TableBody> }
       </Table>
     </TableContainer>
     </div>
